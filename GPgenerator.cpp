@@ -3,12 +3,6 @@
 
 using namespace std;
 
-//Q States are 4-tuples
-// a carry
-// i, the next length-n guess
-// j, the next n-2 guess
-// k, the previous n-2 guess
-
 string getQStateName(int carry, int i, int j, int k) {
 	return ("q_"+to_string(carry)+to_string(i)+"_"+to_string(j)+"_"+to_string(k));
 }
@@ -140,13 +134,13 @@ void createStates (int sameLengthNumber, int minusOneNumber) {
 }
 
 void createAutomaton (int sameLengthNumber, int minusOneNumber) {
-	cout << "NestedWordAutomaton palChecker = (\n";
+	cout << "NestedWordAutomaton gpalChecker = (\n";
 	cout << "callAlphabet = { a b },\ninternalAlphabet = { c d },\nreturnAlphabet = { e f },\n";
 	createStates(sameLengthNumber, minusOneNumber);
 	printCallTransitions(sameLengthNumber, minusOneNumber);
 	printInternalTransitions(sameLengthNumber, minusOneNumber);
 	printReturnTransitions(sameLengthNumber, minusOneNumber);
-	cout << "print(numberOfStates(palChecker));\n";
+	cout << "print(numberOfStates(gpalChecker));\n";
 }
 
 int main() {

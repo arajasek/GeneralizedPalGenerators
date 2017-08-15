@@ -1,4 +1,4 @@
-NestedWordAutomaton palChecker = (
+NestedWordAutomaton gpalChecker = (
 callAlphabet = { a b },
 internalAlphabet = { c d },
 returnAlphabet = { e f },
@@ -1687,7 +1687,8 @@ returnTransitions = {
 (s2 q_22_1_1 f s2)
 }
 );
-print(numberOfStates(palChecker));
+print(numberOfStates(gpalChecker));
+print(numberOfStates(determinize(gpalChecker)));
 
 NestedWordAutomaton syntaxChecker = (
 callAlphabet = { a b },
@@ -1733,4 +1734,4 @@ returnTransitions = {
 }
 );
 
-assert(isIncluded(syntaxChecker, palChecker));
+assert(isIncluded(syntaxChecker, gpalChecker));
